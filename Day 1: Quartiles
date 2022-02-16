@@ -1,0 +1,35 @@
+import statistics as st
+def quartiles(arr):
+    
+    arr=sorted(arr)
+    n=len(arr)
+    
+    if n%2==0:
+        Q1=st.median(arr[:n//2])
+        Q2=st.median(arr)
+        Q3=st.median(arr[n//2:])
+    else:
+        Q1=st.median(arr[:n//2])
+        Q2=arr[n//2]
+        Q3=st.median(arr[n//2+1:])
+    
+    return int(Q1),int(Q2),int(Q3)   
+    
+    
+
+    
+    # Write your code here
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    data = list(map(int, input().rstrip().split()))
+
+    res = quartiles(data)
+
+    fptr.write('\n'.join(map(str, res)))
+    fptr.write('\n')
+
+    fptr.close()
