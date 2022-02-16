@@ -4,7 +4,17 @@ A bag contains 3 red marbles and 4 blue marbles. Then, 2 marbles are drawn from 
 
 P(Red)=3/7
 P(Blue)=4/7
-Given condition the first marble is Red,
+
+Given condition the first marble is Red. Left 6 balls.
+
+P(B|R) = P(Red and Blue)/ P(Red)
+P(Red and Blue) = 3/7 * 4/6
+
+##############################################################
+
+P(Blue|Red) = 4/6 =2/3
+
+###############################################################
 possible events are:
 
 R1R2, R1R3, R1B1, .... 18
