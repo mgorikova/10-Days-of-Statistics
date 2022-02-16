@@ -1,0 +1,12 @@
+
+The probability that a machine produces a defective product is 1/3. What is the probability that the  defect is found during the first 5 inspections?
+
+n=5
+Ps=1/3
+import math as m
+s=0
+for i in range(1,6):
+    p=(1-Ps)**(i-1)*Ps
+    s+=p
+#PP=Ps**n
+print(round(s,3))
