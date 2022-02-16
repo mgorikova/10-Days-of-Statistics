@@ -25,11 +25,13 @@ P(X=RRB) + P(X=RBR) + P(X=BRR) = 17/42
 import itertools
 from fractions import Fraction
 
+######    product('ABCD', 'xy') --> Ax Ay Bx By Cx Cy Dx Dy
+
 X = ["b","b","b","r","r","r","r"]
 Y = ["b","b","b","b","r","r","r","r","r"]
 Z = ["b","b","b","b","r","r","r","r"]
 
-r = [(i)for i in itertools.product(X,Y,Z)]
+r = [(i)for i in itertools.product(X,Y,Z)]     ####  [('b', 'b', 'b'), ('b', 'b', 'b'), ('b', 'b', 'b'),...
 print(r)
 e = list(map(lambda x : x.count('r') == 2 and x.count('b') == 1,r))
 print(e)
