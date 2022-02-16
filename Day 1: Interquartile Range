@@ -1,0 +1,54 @@
+import math
+import os
+import random
+import re
+import sys
+import statistics as st
+
+#
+# Complete the 'interQuartile' function below.
+#
+# The function accepts following parameters:
+#  1. INTEGER_ARRAY values
+#  2. INTEGER_ARRAY freqs
+#
+
+def interQuartile(values, freqs):
+    #values=sorted(values)
+    newl=[[a]*b for a,b in zip(values,freqs)]
+    l=[]
+    for sl in newl:
+        for el in sl:
+            l.append(el)
+    n=len(l)
+    l=sorted(l)
+    if n%2==0:
+        Q1=st.median(l[:n//2])
+        
+        Q3=st.median(l[n//2:])
+        
+        d=Q3-Q1
+        d=float(d)
+        
+    else:
+        Q1=st.median(l[:n//2])
+        
+        Q3=st.median(l[n//2+1:])
+        
+        d=Q3-Q1
+        d=float(d)
+    return round(d,1)
+        
+        
+    # Print your answer to 1 decimal place within this function
+
+if __name__ == '__main__':
+    n = int(input().strip())
+
+    val = list(map(int, input().rstrip().split()))
+
+    freq = list(map(int, input().rstrip().split()))
+
+    interQuartile(val, freq)
+    res=interQuartile(val, freq)
+    print(res)
