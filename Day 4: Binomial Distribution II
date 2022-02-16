@@ -1,0 +1,35 @@
+
+A manufacturer of metal pistons finds that, on average, 12% of the pistons they manufacture are rejected because they are incorrectly sized. What is the probability that a batch of 10 pistons will contain:
+
+1. No more than 2 rejects?
+2. At least 2 rejects?
+
+
+import math as m
+
+Pb=0.12
+
+n=10
+
+ss=0
+for i in range(3):
+
+    p=m.factorial(n)/(m.factorial(i)*m.factorial(n-i))*Pb**(i)*(1-Pb)**(n-i)
+    
+    ss+=p
+
+
+
+
+s=0
+for i in range(2,11):
+
+    p=m.factorial(n)/(m.factorial(i)*m.factorial(n-i))*Pb**(i)*(1-Pb)**(n-i)
+    
+    s+=p
+    
+
+    
+print(round(ss,3))
+
+print(round(s,3))#
