@@ -21,3 +21,5 @@ mode=int(mode)
 print(round(mean,1))
 print(round(median,1))
 print(round(mode,1))
+
+# test
