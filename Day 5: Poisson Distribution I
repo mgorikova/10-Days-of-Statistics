@@ -1,0 +1,14 @@
+
+A random variable, X, follows Poisson distribution with mean of 2.5. Find the probability with which the random variable X is equal to 5.
+
+
+
+
+
+lambda=2.5
+k=5
+import math as m
+P=((lambda**k)*m.exp(-lambda))/m.factorial(k)
+print(round(P,3))
+
+###########  0.067
