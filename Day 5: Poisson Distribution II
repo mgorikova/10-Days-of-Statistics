@@ -2,19 +2,38 @@ The manager of a industrial plant is planning to buy a machine of either type A 
 
 1.The number of repairs, X, that machine A needs is a Poisson random variable with mean 0.88.
 The daily cost of operating A is 
+
 CA=160 + 40X**2
 
 2.The number of repairs, Y, that machine B needs is a Poisson random variable with mean 1.55.
 The daily cost of operating A is 
+
 CB=128 + 40Y**2
 
 Find and print the expected daily cost for each machine.
 
+#########################################################################
+
+P(k,lam)= (lam**k * e**-lam)/k!
+
+E[X] = Var[X] = lam(bda)
+
+Var[X]= E[X**2] - E[X]**2
+
+E[X**2] = Var[X] + E[X]**2 = lambda + lambda**2
+
+E(CA)= E(160 + 40X**2) = E(160) +40E(X**2) = 160 + 40*(lambda + lambda**2)
+
+############################################################################
+
 import math as m
 l1=0.88
 l2=1.55
-C1=160+40*(l1+l1**2)
+
+C1=160+40*(l1+l1**2)   
+
 C2=128+40*(l2+l2**2)
+
 print(round(C1,3))
 print(round(C2,3))
 
