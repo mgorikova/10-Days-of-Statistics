@@ -1,0 +1,21 @@
+
+
+The final grades for a Physics exam taken by a large group of students have a mean of 70 and a standard deviation of 10. If we can approximate the distribution of these grades by a normal distribution, what percentage of the students:
+
+1.have a grade >80   #### the area 1-(area up to 80)
+
+2.have a grade >60
+
+3.have a grade <60   #### the area up to 60
+
+import math as m
+mean,std=70,10
+s60,s80=60,80
+cdf=lambda x: 0.5*(1+m.erf(((x-mean)/std)/m.sqrt(2)))
+res1=100*(1-cdf(80))
+res2=100*(1-cdf(60))
+res3=100*cdf(60)
+print(round(res1,2))
+print(round(res2,2))
+print(round(res3,2))
+
